@@ -14,7 +14,7 @@ class Airplane {
       this.name = name;
       this.isFlying = false;
     }
-    
+
     takeOff() {
       this.isFlying = true;
     }
@@ -51,11 +51,7 @@ class Airplane {
    } 
 
    eat(item) {
-    if(this.stomach.length < 10) {
-      return this.stomach.push(item) 
-    } else { 
-      return null
-    };
+    return this.stomach.length < 10 ? this.stomach.push(item) : null;
    }
 
    poop() {
