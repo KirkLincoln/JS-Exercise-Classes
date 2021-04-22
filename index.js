@@ -172,14 +172,20 @@ class Airplane {
       this.favSubjects = props.favSubjects;
     } 
     listSubjects() {
-      let result = '';
+      let subjects = this.favSubjects;
+      const result = `
+        I am enjoying${subjects.map(subject => { 
+          return ` ${subject}`;
+        })}.
+      `
 
-      for(let i = 0; i > this.favSubjects.length; i++) {
-        result += `${this.favSubjects[i]}, `;
-      };
-      result += `${this.favSubjects[this.favSubjects.length - 1]}.`
-  
-      console.log(result);
+      return result;
+    }
+    PRAssignment(subject) {
+      return `${this.name} has subvmitted a PR for ${subject}`;
+    }
+    sprintChallenge(subject) {
+      return `${this.name} has begun sprint challenge on ${subject}`;
     }
  }
   
@@ -196,8 +202,20 @@ class Airplane {
           + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
- class ProjectManager {
-     
+ class ProjectManager extends Instructor {
+   constructor(props) {
+     super(props);
+
+     this.gradClassName = props.gradClassName;
+     this.favInstructor = props.favInstructor;
+     console.log(props);
+   }
+   standUp(channel) {
+     return `${this.name} announces to ${channel}, @channel standy time!`;
+   }
+   debugsCode(student, subject) {
+      return `${this.name} debugs ${student.name}'s code on ${subject}`;
+   }
  }
   /*
     STRETCH PROBLEM (no tests!)
