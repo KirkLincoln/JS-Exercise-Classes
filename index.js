@@ -14,9 +14,11 @@ class Airplane {
       this.name = name;
       this.isFlying = false;
     }
+    
     takeOff() {
       this.isFlying = true;
     }
+
     land() {
       this.isFlying = false;
     }
@@ -47,6 +49,7 @@ class Airplane {
      this.age  = age;
      this.stomach = [];
    } 
+
    eat(item) {
     if(this.stomach.length < 10) {
       return this.stomach.push(item) 
@@ -54,9 +57,11 @@ class Airplane {
       return null
     };
    }
+
    poop() {
      return this.stomach = [];
    }
+
    toString() {
      return `Hi, my name is ${this.name} and I am ${this.age} years old`;
    }
@@ -83,6 +88,7 @@ class Airplane {
       this.tank = 0;
       this.odometer = 0;
     }
+
     drive(distance) {
       if(this.tank*this.milesPerGallon >= distance) {
         this.odometer += distance;
@@ -95,6 +101,7 @@ class Airplane {
       }
       return `I ran out of fuel at ${this.odometer} miles!`
     }
+
     fill(gallons) {
       return this.tank += gallons;
     }
@@ -118,6 +125,7 @@ class Airplane {
       this.age = props.age;
       this.location = props.location;
     } 
+
     speak() {
       return `Hello my name is ${this.name}, I am from ${this.location}.`;
     }
@@ -144,9 +152,11 @@ class Airplane {
     this.favLanguage = props.favLanguage;
     this.catchPhrase = props.catchPhrase;
   } 
+
   demo(subject) {
     return `Today we are learning about ${subject}.`
   }
+
   grade(student, subject) {
     return `${student.name} recieves a perfect score on ${subject}.`
   }
@@ -183,12 +193,15 @@ class Airplane {
 
       return result;
     }
+
     PRAssignment(subject) {
       return `${this.name} has subvmitted a PR for ${subject}`;
     }
+
     sprintChallenge(subject) {
       return `${this.name} has begun sprint challenge on ${subject}`;
     }
+
  }
   
   /*
