@@ -135,8 +135,19 @@ class Airplane {
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
- class Instructor {
-
+ class Instructor extends Lambdasian {
+  constructor(props) {
+    super(props);
+    this.specialty = props.specialty;
+    this.favLanguage = props.favLanguage;
+    this.catchPhrase = props.catchPhrase;
+  } 
+  demo(subject) {
+    return `Today we are learning about ${subject}.`
+  }
+  grade(student, subject) {
+    return `${student.name} recieves a perfect score on ${subject}.`
+  }
  }
   /*
     TASK 5
@@ -153,8 +164,23 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
- class Student {
-     
+ class Student extends Lambdasian {
+    constructor(props) {
+      super(props);
+      this.previousBackground = props.previousBackground;
+      this.className = props.className;
+      this.favSubjects = props.favSubjects;
+    } 
+    listSubjects() {
+      let result = '';
+
+      for(let i = 0; i > this.favSubjects.length; i++) {
+        result += `${this.favSubjects[i]}, `;
+      };
+      result += `${this.favSubjects[this.favSubjects.length - 1]}.`
+  
+      console.log(result);
+    }
  }
   
   /*
